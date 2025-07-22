@@ -1,17 +1,17 @@
 # Background and Motivation
 
-In many scenarios, particularly with the rise of Trusted Execution Environments (TEEs) and the increasing security demands for IoT devices and confidential workloads, it's crucial to ensure that the peer's state is as expected, in addition to conventional authentication (verification of identity).
+In many scenarios, particularly with the rise of Trusted Execution Environments (TEEs) and the increasing security demands for IoT devices and confidential workloads, it's crucial also to ensure that the peer's state is as expected, in addition to conventional authentication (verification of identity).
 
 Remote attestation ([RFC9334](https://datatracker.ietf.org/doc/rfc9334/)) addresses this by allowing an entity to produce verifiable Evidence about its current state - such as proving that its software and firmware haven't been tampered with, that secure boot is enabled, or that cryptographic keys are securely stored within a hardware-protected environment.
 
-This provides a much stronger assurance of trustworthiness, helping to prevent attacks that might compromise a system even if its traditional credentials remain valid, and enables authorization policies based on richer security signals.
+This provides a stronger assurance of trustworthiness, helping to prevent attacks that might compromise a system even if its traditional credentials remain valid, and enables authorization policies based on richer security signals.
 
 To address this need for enhanced, verifiable trustworthiness, this WG will deliver a Standards Track solution using TLS.
 The solution will bind to the TLS handshake and enable the attestation of one or both TLS endpoints.
 
 This effort will focus on leveraging the (D)TLS handshake protocol as-is. It will also leverage the existing RATS toolbox to ensure interoperability with existing and future attestation technologies.
 
-# Goals
+# Scope
 
 This working group has a narrow focus: to produce a single document specifying an exchange that is performed after handshake completion and provides attestation of one or both TLS endpoints.
 
@@ -27,13 +27,13 @@ The working group will ensure that privacy principles and avoidance of vendor lo
 
 The working group will engage with the research community on the formal analysis of the protocol artefacts in parallel with the specification work.
 
-We propose to use [Exported Authenticators (RFC9261)](https://datatracker.ietf.org/doc/rfc9261/) as the post-handshake mechanism and [Conceptual Message Wrapper (CMW)](https://datatracker.ietf.org/doc/draft-ietf-rats-msg-wrap/) as the format for the attestation credential. 
+The WG will consider using [Exported Authenticators (RFC9261)](https://datatracker.ietf.org/doc/rfc9261/) as the post-handshake mechanism and [Conceptual Message Wrapper (CMW)](https://datatracker.ietf.org/doc/draft-ietf-rats-msg-wrap/) as the format for the attestation credential. 
 
 # Dependencies and Liaisons
 
 The working group will keep the TLS and RATS working groups, as well as the Confidential Computing Consortium (CCC) Attestation SIG informed of its activities by presenting updates at their meetings and requesting reviews.
 
-Regarding the formal analysis aspects, the working group will similarly engage with the UFM research group.
+The working group will engage with the UFM research group regarding formal analysis of the resulting work.
 
 # Program of Work
 
