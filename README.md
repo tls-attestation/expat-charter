@@ -13,7 +13,7 @@ This effort will focus on leveraging the (D)TLS handshake protocol as-is. It wil
 
 # Scope
 
-This working group has a narrow focus: to produce a single document specifying an exchange that is performed after handshake completion and provides attestation of one or both TLS endpoints.
+This working group has a narrow focus: to produce a single document specifying an exchange that is performed after handshake completion and binds attestation of one or both peers to the TLS handshake.
 
 More specifically:
 * The protocol should be agnostic to remote attestation technologies.
