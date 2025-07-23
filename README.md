@@ -1,6 +1,6 @@
 # Background and Motivation
 
-In many scenarios, particularly with the rise of Trusted Execution Environments (TEEs) and the increasing security demands for IoT devices and confidential workloads, it's crucial also to ensure that the peer's state is as expected, in addition to conventional authentication (verification of identity).
+In many scenarios, particularly with the rise of Trusted Execution Environments (TEEs) and the increasing security demands for IoT devices and confidential workloads, it's crucial to ensure that the peer's state is as expected, in addition to conventional authentication (verification of identity).
 
 Remote attestation ([RFC9334](https://datatracker.ietf.org/doc/rfc9334/)) addresses this by allowing an entity to produce verifiable Evidence about its current state - such as proving that its software and firmware haven't been tampered with, that secure boot is enabled, or that cryptographic keys are securely stored within a hardware-protected environment.
 
