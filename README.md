@@ -19,7 +19,7 @@ More specifically:
 * The protocol should be agnostic to remote attestation technologies.
 * TLS 1.3 handshake protocol should be used as-is, leveraging its existing deployment and security guarantees, including formal validation.  In particular, authentication will only use the existing TLS handshake mechanisms.
 * The protocol may specify negotiation mechanisms within the initial TLS handshake provided they do not modify the cryptographic properties of the handshake.
-* The protocol must allow a Relying Party to ensure the freshness of the initial attestation and periodically refresh the attestation credentials throughout the lifetime of the TLS connection.
+* The protocol must allow a Relying Party to ensure the [freshness](https://www.ietf.org/rfc/rfc9334.html#section-10) of the initial attestation and periodically refresh the attestation credentials throughout the lifetime of the TLS connection.
 
 The working group will not extend TLS or create new remote attestation technologies or cryptographic protocol mechanisms.
 
