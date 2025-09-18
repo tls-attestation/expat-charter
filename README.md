@@ -38,7 +38,7 @@ Evidence and Attestation Results to the TLS connection.
 **Specific scoping**:
 
 - This effort will be restricted to leveraging the (D)TLS 1.3 protocol
-and a potential attestation binding to a (D)TLS 1.3 session. Older versions of (D)TLS will not be supported.
+and attestation binding to a (D)TLS 1.3 connection. Older versions of (D)TLS will not be supported.
 
 - It will leverage the existing RATS WG documents to ensure
 interoperability with existing and future attestation technologies.
@@ -54,7 +54,7 @@ core (D)TLS specification.
 freshness of Evidence or Attestation Results, whichever is applicable.
 
 - The effort will not create solutions that decrease privacy
-or security properties of generic TLS sessions.
+or security properties of generic TLS connections.
 
 The working group will engage with the research community on the
 evaluation and formal analysis of the protocol artifacts in parallel
@@ -83,7 +83,7 @@ This document need not be published as an RFC.
 
 A Standards Track document defining a (D)TLS protocol solution
 supporting remote peer and mutual attestation bound to the (D)TLS
-session.
+connection.
 
 # Future work
 After the initial Milestones are complete, the WG may recharter to work
