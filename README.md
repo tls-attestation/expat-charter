@@ -3,19 +3,21 @@
 In many scenarios, particularly with the rise of Trusted Execution
 Environments (TEEs) and the increasing security demands for IoT devices
 and confidential workloads, there is a requirement for some use cases that
-utilize protocols such as (D)TLS to also ensure that the peer's state is
-validated in addition to conventional authentication (verification of identity).
+utilize protocols such as (D)TLS to also ensure that the peer's state 
+expressed as Claims (for example about code, data and configurations) is
+validated in addition to the verification of identity for conventional authentication.
 
 Remote attestation (RFC9334) addresses this by allowing an entity to
-produce verifiable Evidence about its current state. For example, to
-prove that its software and firmware haven't been tampered with. Or
-that a secure boot method is enabled. Or that cryptographic keys are
+produce verifiable Evidence about its current state, for example, to
+prove that its software and firmware haven't been tampered with, or
+that a secure boot method is enabled, or that cryptographic keys are
 securely stored within a hardware-protected environment.
 
-This provides an additional assurance of trustworthiness, helping to
+The composition of remote attestation and (D)TLS provides an 
+additional assurance of trustworthiness, helping to
 prevent the continued use of a compromised system even if its
 conventional credentials remain valid, and enables authorization
-policies based on richer security guarantees.
+policies based on stronger security guarantees.
 
 
 # Scope 
@@ -29,23 +31,27 @@ extension and/or exporter features of D(TLS).
 Such a mechanism would allow an entity to produce Evidence or an
 Attestation Result about itself for another party to evaluate.
 
+This protocol will also describe a minimum subset of properties
+that the attested remote state must ensure in order to bind the
+Evidence and Attestation Results to the TLS connection.
+
 **Specific scoping**:
 
 - This effort will be restricted to leveraging the (D)TLS 1.3 protocol
-and a potential attestation binding to a (D)TLS 1.3 session.
+and a potential attestation binding to a (D)TLS 1.3 session. Older versions of (D)TLS will not be supported.
 
 - It will leverage the existing RATS WG documents to ensure
 interoperability with existing and future attestation technologies.
 
-- The (D)TLS protocol solution will focus on attestation and authenticated
-attestation, but will not create new authentication mechanisms.
+- The attested (D)TLS protocol will focus on the composition of remote attestation and (D)TLS,
+but will not create new authentication mechanisms.
 
-- The (D)TLS protocol solution will not modify the (D)TLS protocol outside
+- The attested (D)TLS protocol will not modify the (D)TLS protocol outside
 of adding (D)TLS extensions to support its goals that do not modify the
 core (D)TLS specification.
 
-- The (D)TLS protocol solution will allow per-connection
-freshness.
+- The attested (D)TLS protocol will allow per-connection
+freshness of Evidence or Attestation Results, whichever is applicable.
 
 - The effort will not create solutions that decrease privacy
 or security properties of generic TLS sessions.
@@ -63,7 +69,7 @@ RATS working group, and the Confidential Computing Consortium's
 (CCC's) Attestation Special Interest Group (SIG).
 
 - The working group will engage with research groups regarding
-formal analysis of the working groups's resulting work.
+formal analysis of the working group's resulting work.
 
 - The working group will work closely with the WIMSE working group
 to ensure its deliverables are usable for common WIMSE deployments
@@ -81,5 +87,5 @@ session.
 
 # Future work
 After the initial Milestones are complete, the WG may recharter to work
-on adding attestation to protocols other than D(TLS), such as IKEv2 or
+on adding attestation to protocols other than (D)TLS, such as IKEv2 or
 SSH, provided there is sufficient interest.
